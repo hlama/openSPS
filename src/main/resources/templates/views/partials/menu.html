@@ -1,0 +1,81 @@
+<nav xmlns:th="http://www.thymeleaf.org" th:fragment="menu" class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <li class="nav-item">
+            <div class="d-flex sidebar-profile">
+                <div class="sidebar-profile-image">
+                    <img src="../../images/faces/face29.png" alt="image">
+                    <span class="sidebar-status-indicator"></span>
+                </div>
+                <div class="sidebar-profile-name">
+                    <p class="sidebar-name">
+                        Daniel Kalonji
+                    </p>
+                    <p class="sidebar-designation">
+                        Welcome
+                    </p>
+                </div>
+            </div>
+            <div class="nav-search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Type to search..." aria-label="search" aria-describedby="search">
+                    <div class="input-group-append">
+                  <span class="input-group-text" id="search">
+                    <i class="typcn typcn-zoom"></i>
+                  </span>
+                    </div>
+                </div>
+            </div>
+            <p class="sidebar-menu-title">Dash menu</p>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
+                <i class="typcn typcn-briefcase menu-icon"></i>
+                <span class="menu-title">Saisie des donnees</span>
+                <i class="typcn typcn-chevron-right menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic1">
+                <ul class="nav flex-column sub-menu">
+                    <li  th:each="type: ${typelist}"  class="nav-item"> <a class="nav-link" th:text="${type.libelle}" th:href="@{'/dataentry/{id}'(id=${type.id})}"> </a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
+                <i class="typcn typcn-document-text menu-icon"></i>
+                <span class="menu-title">Facturation</span>
+                <i class="typcn typcn-chevron-right menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic2">
+                <ul class="nav flex-column sub-menu">
+                    <li  th:each="type: ${typelist}"  class="nav-item"> <a class="nav-link" th:text="${type.libelle}" th:href="@{'/invoice/{id}'(id=${type.id})}"> </a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <i class="typcn typcn-cog menu-icon"></i>
+                <span class="menu-title">Configuration</span>
+                <i class="typcn typcn-chevron-right menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/dataset/add">Formulaire</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/coasting/add">Coasting</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/calculate/add">Calculation</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/dataelement/add">Prestations</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/bank/add">Creer banque</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/accountbank/add">Creer compte bancaire</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/orgunits/province/add">Province</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/orgunits/zs/add">Zone de sante</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/orgunits/as/add">Aire de sante</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/orgunits/fosa/add">FOSA</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Utilisateurs</a></li>
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+</nav>

@@ -1,0 +1,14 @@
+package com.purchasing.health;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+
+@SpringBootApplication
+public class CordaidApplication{
+
+	public static void main(String[] args) {
+		SpringApplication.run(CordaidApplication.class, args);
+	}
+
+}

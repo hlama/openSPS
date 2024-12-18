@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group mt-3">
+            <label for="file">Select a CSV file</label>
+            <input type="file" name="file" class="form-control-file" id="file" accept=".csv">
+        </div>
+        <button type="submit" class="btn btn-primary">Import Users</button>
+    </form>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        
+        var prov = /*[[${provinces}]]*/ 'default';
+            console.log(prov);
+
+        
+        /*]]>*/
+        </script>
+</body>
+</html>
